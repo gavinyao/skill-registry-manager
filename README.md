@@ -39,9 +39,17 @@ ln -s $(pwd) ~/.claude/skills/skill-manager
 - "列出订阅" / "查看订阅"
 - "删除订阅" / "取消订阅 xxx"
 
+## 文件说明
+
+| 文件 | 说明 |
+|------|------|
+| `SKILL.md` | Skill 定义文件，Claude Code 自动加载 |
+| `registry.yaml` | 注册表配置，定义可安装的 skills 和订阅 |
+| `registry.example.yaml` | 完整配置示例，涵盖所有场景 |
+
 ## 注册表格式
 
-`registry.yaml` 采用统一的 YAML 格式：
+`registry.yaml` 采用统一的 YAML 格式（完整示例见 [`registry.example.yaml`](registry.example.yaml)）：
 
 ```yaml
 # 订阅其他注册表（支持递归加载，本地和远程可混用）
@@ -86,6 +94,20 @@ skills:
 | `~` 简写 | `~/path/to/file.yaml` |
 | 绝对路径 | `/absolute/path/to/file.yaml` |
 | 相对路径 | `./relative/path`（基于注册表文件所在目录） |
+
+### 多机器共享
+
+通过订阅机制，可以构建分层的注册表结构，实现多机器共享和本机定制：
+
+```
+skill-manager/registry.yaml          ← 入口
+├── shared-registry                   ← 多机器共享注册表（通过 dotfiles 同步）
+│   ├── skill-creator
+│   ├── find-skills
+│   └── 订阅 team-skills              ← 团队 skills
+└── host-registry                     ← 本机专属（按需定制）
+    └── (特定于本机的 skills)
+```
 
 ## License
 
