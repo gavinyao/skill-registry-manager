@@ -1,9 +1,9 @@
 # 订阅注册表
-subscriptions:
-  - name: yenv-host
-    url: $HOME/develop/yenv/host.d/$HOSTNAME/skills-registry.yaml
+subscriptions: []
   # - name: official
   #   url: https://example.com/skills-registry.yaml
+  # - name: team-shared
+  #   url: $HOME/shared-skills/registry.yaml
 
 # 本地 skills
 skills:
@@ -18,4 +18,3 @@ skills:
     source: npx
     install: "npx skills add vercel-labs/skills@find-skills -y -g"
     repo: https://github.com/vercel-labs/skills/tree/main/skills/find-skills
-
