@@ -1,9 +1,9 @@
 ---
-name: skill-manager
+name: skill-registry
 description: "管理和安装 Claude Code skills 的工具。Use when: 列出可用skills、有哪些skills、安装skill、管理skills、添加订阅、列出订阅、查看订阅、删除订阅、取消订阅。NOT for: 与 skill 管理无关的任务。"
 ---
 
-# Skill Manager
+# Skill Registry
 
 管理和安装 Claude Code skills 的工具。维护一份常用 skills 注册表，支持订阅远程注册表或本地注册表文件，便于共享和分发 skills 列表。
 
