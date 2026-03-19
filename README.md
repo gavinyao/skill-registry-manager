@@ -1,4 +1,4 @@
-# Skill Registry
+# Skill Registry Manager
 
 一个 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill，用于管理和安装其他 Claude Code skills。
 
@@ -19,13 +19,13 @@
 
 ```bash
 # 通过 npx 安装（推荐）
-cd ~/.claude/skills && npx skills add gavinyao/skill-registry -y -g
+cd ~/.claude/skills && npx skills add gavinyao/skill-registry-manager -y -g
 
 # 或手动复制
-cp -r . ~/.claude/skills/skill-registry
+cp -r . ~/.claude/skills/skill-registry-manager
 
 # 或使用符号链接
-ln -s $(pwd) ~/.claude/skills/skill-registry
+ln -s $(pwd) ~/.claude/skills/skill-registry-manager
 ```
 
 ## 使用
